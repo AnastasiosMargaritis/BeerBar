@@ -26,6 +26,4 @@ public class BeerController {
     public ResponseEntity updateBeerById(@PathVariable("beerId") UUID beerId, @RequestBody @Validated BeerDto beerDto){
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
-
-
 }
