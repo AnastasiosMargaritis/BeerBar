@@ -1,4 +1,4 @@
-package com.beer.model;
+package com.beer.web.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

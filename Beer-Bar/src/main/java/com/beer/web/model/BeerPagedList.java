@@ -1,4 +1,4 @@
-package com.beer.model;
+package com.beer.web.model;
 
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
