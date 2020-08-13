@@ -1,5 +1,6 @@
 package com.beer.web.model;
 
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -40,9 +41,8 @@ public class BeerDto {
     @NotNull
     private BeerStyleEnum beerStyle;
 
-    @Positive
     @NotNull
-    private Long upc;
+    private String upc;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING)
     @Positive

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
-@RequiredArgsConstructor
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/beer")
 public class BeerController {
 
