@@ -9,5 +9,4 @@ public class BeerInventoryMicroserviceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BeerInventoryMicroserviceApplication.class, args);
 	}
-
 }

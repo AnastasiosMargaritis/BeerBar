@@ -1,15 +1,17 @@
 package brewery.services;
 
 import brewery.web.model.BeerDto;
+import brewery.web.model.BeerPagedList;
+import brewery.web.model.BeerStyleEnum;
+import org.springframework.data.domain.PageRequest;
 
-import java.util.List;
 import java.util.UUID;
 
 public interface BeerService {
 
-    List<BeerDto> getAllBeers();
+    BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest, Boolean showInventoryOnHand);
 
-    BeerDto getById(UUID beerId);
+    BeerDto getById(UUID beerId, Boolean showOnHandInventory);
 
     BeerDto saveNewBeer(BeerDto beerDto);
 
