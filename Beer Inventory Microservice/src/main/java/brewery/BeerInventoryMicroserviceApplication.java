@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BeerInventoryServiceApplication {
+public class BeerInventoryMicroserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BeerInventoryServiceApplication.class, args);
+		SpringApplication.run(BeerInventoryMicroserviceApplication.class, args);
 	}
 
 }
