@@ -2,6 +2,8 @@ package brewery.web.controllers;
 
 import brewery.services.BeerOrderService;
 import brewery.web.model.BeerOrderDto;
+import brewery.web.model.BeerOrderPagedList;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +20,22 @@ public class BeerOrderController {
 
     public BeerOrderController(BeerOrderService beerOrderService) {
         this.beerOrderService = beerOrderService;
+    }
+
+    @GetMapping("orders")
+    public BeerOrderPagedList listOrders(@PathVariable("customerId") UUID customerId,
+                                         @RequestParam(value = "pageNumber", required = false) Integer pageNumber,
+                                         @RequestParam(value = "pageSize", required = false) Integer pageSize){
+
+        if (pageNumber == null || pageNumber < 0){
+            pageNumber = DEFAULT_PAGE_NUMBER;
+        }
+
+        if (pageSize == null || pageSize < 1) {
+            pageSize = DEFAULT_PAGE_SIZE;
+        }
+
+        return beerOrderService.listOrders(customerId, PageRequest.of(pageNumber, pageSize));
     }
 
 
