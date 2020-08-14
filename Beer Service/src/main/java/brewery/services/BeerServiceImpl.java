@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import brewery.web.controllers.NotFoundException;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -15,6 +17,18 @@ import java.util.UUID;
 public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
     private final BeerMapper beerMapper;
+
+    @Override
+    public List<BeerDto> getAllBeers() {
+
+        List<Beer> beers = beerRepository.findAll();
+        List<BeerDto> beerDtos = new ArrayList<>();
+
+        for (Beer beer: beers){
+            beerDtos.add(beerMapper.beerToBeerDto(beer));
+        }
+        return beerDtos;
+    }
 
     @Override
     public BeerDto getById(UUID beerId) {
